@@ -11,7 +11,7 @@ class Zeroxzero < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/anonymous-dev-org/0x0/releases/download/v0.1.0/0x0-darwin-x64.zip"
-      sha256 "69fb7cc93c35943f33ad7c45c3839b876e4d82d7d612276b94d5723ce33025d7"
+      sha256 "66f8c5146e71523ddbd2a4f1dfe9851a56373a3f2b89cd471074fceac2a242c3"
 
       def install
         bin.install "zeroxzero" => "0x0"
@@ -19,7 +19,7 @@ class Zeroxzero < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/anonymous-dev-org/0x0/releases/download/v0.1.0/0x0-darwin-arm64.zip"
-      sha256 "15228e2efed35626d7980a8219c9a3a04723ddbb60e0db6d1636b57afb391b1c"
+      sha256 "68fc912ed1ec3a52a1ca53f02089cecb43010cd1a07470b11491834148439550"
 
       def install
         bin.install "zeroxzero" => "0x0"
@@ -30,14 +30,14 @@ class Zeroxzero < Formula
   on_linux do
     if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
       url "https://github.com/anonymous-dev-org/0x0/releases/download/v0.1.0/0x0-linux-x64.tar.gz"
-      sha256 "e86ffbe5f65d83a995e5359441ff59b2da4924a387f1710276c03fd991a86417"
+      sha256 "19c651ba9ecee475e0356d066a23112e57f35709808075c40556862f565e93bd"
       def install
         bin.install "zeroxzero" => "0x0"
       end
     end
     if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
       url "https://github.com/anonymous-dev-org/0x0/releases/download/v0.1.0/0x0-linux-arm64.tar.gz"
-      sha256 "8b1198aa5bcff6e2af68d403ad44aaa3c6f3ffd72549c3c06ffa47cb924fbc5d"
+      sha256 "c1893b13425d42bd23c1af094bef583b95d49f6fed3d979317351d9162cf7894"
       def install
         bin.install "zeroxzero" => "0x0"
       end
