@@ -4,20 +4,20 @@
 class ZeroxzeroGit < Formula
   desc "The AI coding agent built for the terminal."
   homepage "https://github.com/anonymous-dev-org/0x0"
-  version "0.2.0"
+  version "1.1.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/anonymous-dev-org/0x0/releases/download/0x0-git-v0.2.0/0x0-git-darwin-x64.zip"
-      sha256 "1e4f82c607462bd668b4e4e4851d4a6ea7144684c2d2960fcfefea1d984166c2"
+      url "https://github.com/anonymous-dev-org/0x0/releases/download/0x0-git-v1.1.0/0x0-git-darwin-x64.zip"
+      sha256 "222e2adeeada41b0c5fb0ccd941df604e8653d5d858d1911221c01966f1eeeb8"
 
       def install
         bin.install "0x0-git"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/anonymous-dev-org/0x0/releases/download/0x0-git-v0.2.0/0x0-git-darwin-arm64.zip"
-      sha256 "222089594644f9d7ef8d56487bf4a33ebf0349713b52c6cde24b940ad98eb6e1"
+      url "https://github.com/anonymous-dev-org/0x0/releases/download/0x0-git-v1.1.0/0x0-git-darwin-arm64.zip"
+      sha256 "3bc3e920a70364f889fe3867fa206158456b12e7bd9e9bac8728905faecea771"
 
       def install
         bin.install "0x0-git"
@@ -27,15 +27,15 @@ class ZeroxzeroGit < Formula
 
   on_linux do
     if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
-      url "https://github.com/anonymous-dev-org/0x0/releases/download/0x0-git-v0.2.0/0x0-git-linux-x64.tar.gz"
-      sha256 "13526d8601fbf43889a8033a4e872602377cbd2487b8baa01d2d36b35c95f994"
+      url "https://github.com/anonymous-dev-org/0x0/releases/download/0x0-git-v1.1.0/0x0-git-linux-x64.tar.gz"
+      sha256 "617dd4f2b2a1c337a81e4f40b381a3cf03b404d12e37467db9e4106e0d752c27"
       def install
         bin.install "0x0-git"
       end
     end
     if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
-      url "https://github.com/anonymous-dev-org/0x0/releases/download/0x0-git-v0.2.0/0x0-git-linux-arm64.tar.gz"
-      sha256 "25d401315ed23ef6b0aa6e317d1626370f0b0da6435285f0e4f172cb90b7bf3d"
+      url "https://github.com/anonymous-dev-org/0x0/releases/download/0x0-git-v1.1.0/0x0-git-linux-arm64.tar.gz"
+      sha256 "ae736e70657040373a4d7ac1b5683349b039be1d8c7faf99d45d081f925c875d"
       def install
         bin.install "0x0-git"
       end
