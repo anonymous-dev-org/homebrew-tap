@@ -9,7 +9,7 @@ class ZeroxzeroGit < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/anonymous-dev-org/0x0/releases/download/0x0-git-v2.2.0/0x0-git-darwin-x64.zip"
-      sha256 "e9b55c044f29e5e85d9bfebbad9193314847d329186671ba71188a7c8d954f69"
+      sha256 "1fde2ca7d94ce82e21d40c99e957cf60c6c6ca2be5f990fce317261a169ba666"
 
       def install
         bin.install "0x0-git"
@@ -17,7 +17,7 @@ class ZeroxzeroGit < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/anonymous-dev-org/0x0/releases/download/0x0-git-v2.2.0/0x0-git-darwin-arm64.zip"
-      sha256 "65f9bd75f3fab497d264d2bcf485e2b20bcde584383d1dcd5918447fd65be218"
+      sha256 "de2c67fb1ceecebc9e8bae9e7dc68e0fbb8b10ee7c69cbc4f70f6ae549b3f5f7"
 
       def install
         bin.install "0x0-git"
@@ -28,14 +28,14 @@ class ZeroxzeroGit < Formula
   on_linux do
     if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
       url "https://github.com/anonymous-dev-org/0x0/releases/download/0x0-git-v2.2.0/0x0-git-linux-x64.tar.gz"
-      sha256 "5bf0b36fdadac048644643be59c19163064b4d8f256379e43366a2672407091a"
+      sha256 "b59c417bb0469398e5f6495605bfc717a549d5bbe5e3a2667006c94defb812c9"
       def install
         bin.install "0x0-git"
       end
     end
     if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
       url "https://github.com/anonymous-dev-org/0x0/releases/download/0x0-git-v2.2.0/0x0-git-linux-arm64.tar.gz"
-      sha256 "f282d29ea6d2f4ada343a20d946de1d83f73cfbc6a949174ad7b0468d7b347fe"
+      sha256 "8cf180e30ffa9264fbcf8a5cede8a5e7404d5c4efa9f734cdad779a3a2b06c05"
       def install
         bin.install "0x0-git"
       end
