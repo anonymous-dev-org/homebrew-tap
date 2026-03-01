@@ -4,22 +4,22 @@
 class Zeroxzero < Formula
   desc "The AI coding agent built for the terminal."
   homepage "https://github.com/anonymous-dev-org/0x0"
-  version "5.8.1"
+  version "5.8.2"
 
   depends_on "ripgrep"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/anonymous-dev-org/0x0/releases/download/v5.8.1/0x0-darwin-x64.zip"
-      sha256 "92f5d6252cf32546db7467c7d94a5e56e246190bf562a701c6db5f3e62ba7a6f"
+      url "https://github.com/anonymous-dev-org/0x0/releases/download/v5.8.2/0x0-darwin-x64.zip"
+      sha256 "5935738f1ecbc901345933b18618e43aacdc993567d09aab32a3708bc9bbe5ec"
 
       def install
         bin.install "zeroxzero" => "0x0"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/anonymous-dev-org/0x0/releases/download/v5.8.1/0x0-darwin-arm64.zip"
-      sha256 "b9b1a5c5a854ca11db5b26ebe3eb42b71d224c182f4e1cea1cb16bce0d37a5aa"
+      url "https://github.com/anonymous-dev-org/0x0/releases/download/v5.8.2/0x0-darwin-arm64.zip"
+      sha256 "c9256a7455ef129f7f829bb348e2232deba16be6b41bc1827d75ac990c4ba5f6"
 
       def install
         bin.install "zeroxzero" => "0x0"
@@ -29,15 +29,15 @@ class Zeroxzero < Formula
 
   on_linux do
     if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
-      url "https://github.com/anonymous-dev-org/0x0/releases/download/v5.8.1/0x0-linux-x64.tar.gz"
-      sha256 "31e0babacb9e0310d6a686cdfeac55d1c323bc73fbb398c89b9d136d0e28a73f"
+      url "https://github.com/anonymous-dev-org/0x0/releases/download/v5.8.2/0x0-linux-x64.tar.gz"
+      sha256 "88b5bce1dee4a17ecb6012559000bdc4e470101675b1ee3f117942753720c8c1"
       def install
         bin.install "zeroxzero" => "0x0"
       end
     end
     if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
-      url "https://github.com/anonymous-dev-org/0x0/releases/download/v5.8.1/0x0-linux-arm64.tar.gz"
-      sha256 "86a61cec81fbb673f922984a0738f381d139646a2d89a8d9e60303b36394ec8e"
+      url "https://github.com/anonymous-dev-org/0x0/releases/download/v5.8.2/0x0-linux-arm64.tar.gz"
+      sha256 "5e4679019bae66d188d031f7c7dd35e6e937aa9e1094a03c9ddf3eb67ceca6f2"
       def install
         bin.install "zeroxzero" => "0x0"
       end
