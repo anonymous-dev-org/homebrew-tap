@@ -4,20 +4,20 @@
 class ZeroxzeroServer < Formula
   desc "The AI coding agent daemon."
   homepage "https://github.com/anonymous-dev-org/0x0"
-  version "2.8.1"
+  version "2.8.2"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/anonymous-dev-org/0x0/releases/download/0x0-server-v2.8.1/0x0-server-darwin-x64.zip"
-      sha256 "51973ef69dd4fed0885e58d60b42b53e4bfe5ce47a9b419f674316cf8bd99689"
+      url "https://github.com/anonymous-dev-org/0x0/releases/download/0x0-server-v2.8.2/0x0-server-darwin-x64.zip"
+      sha256 "cdfbe7b30790cf750327b43434748ed457a27144841ebb782c69da06306a3fca"
 
       def install
         bin.install "0x0-server"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/anonymous-dev-org/0x0/releases/download/0x0-server-v2.8.1/0x0-server-darwin-arm64.zip"
-      sha256 "15a03a01f69a206ccabeba4d11e2f776e66b83e7bdef1498fa7473407a9f3b24"
+      url "https://github.com/anonymous-dev-org/0x0/releases/download/0x0-server-v2.8.2/0x0-server-darwin-arm64.zip"
+      sha256 "14287c6e8b431e8a0483c9ed6baca7d8dfda48edb726a9f107536759a7ce19e8"
 
       def install
         bin.install "0x0-server"
@@ -27,15 +27,15 @@ class ZeroxzeroServer < Formula
 
   on_linux do
     if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
-      url "https://github.com/anonymous-dev-org/0x0/releases/download/0x0-server-v2.8.1/0x0-server-linux-x64.tar.gz"
-      sha256 "8fac38d2402365ae24ab83aa48b4945336f8506681c9f27514377d0475605fc3"
+      url "https://github.com/anonymous-dev-org/0x0/releases/download/0x0-server-v2.8.2/0x0-server-linux-x64.tar.gz"
+      sha256 "2d24ccd5228df22873edbd73c5debb6e91ee8acb70b1fa81b176e7a04b3bcb71"
       def install
         bin.install "0x0-server"
       end
     end
     if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
-      url "https://github.com/anonymous-dev-org/0x0/releases/download/0x0-server-v2.8.1/0x0-server-linux-arm64.tar.gz"
-      sha256 "945ce24ef0432f4a0459e61488b4a8130dab04a16122e33474f42f8078cf740b"
+      url "https://github.com/anonymous-dev-org/0x0/releases/download/0x0-server-v2.8.2/0x0-server-linux-arm64.tar.gz"
+      sha256 "269e786e4a75505f9ecfb09c28085098011e37e45d3c1c2b0e3fb378e0a458c7"
       def install
         bin.install "0x0-server"
       end
