@@ -1,0 +1,116 @@
+name: Update Formulae
+
+on:
+  repository_dispatch:
+    types: [update-formulae]
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    name: Update formula files
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Update zeroxzero-server formula
+        env:
+          VERSION: ${{ github.event.client_payload.version }}
+          SHA_DARWIN_ARM64: ${{ github.event.client_payload.server_darwin_arm64 }}
+          SHA_DARWIN_X64: ${{ github.event.client_payload.server_darwin_x64 }}
+          SHA_LINUX_X64: ${{ github.event.client_payload.server_linux_x64 }}
+          SHA_LINUX_ARM64: ${{ github.event.client_payload.server_linux_arm64 }}
+        run: |
+          cat > Formula/zeroxzero-server.rb << RUBY
+          # typed: false
+          # frozen_string_literal: true
+
+          class ZeroxzeroServer < Formula
+            desc "0x0 execution server for AI coding agents"
+            homepage "https://github.com/anonymous-dev-org/0x0"
+            version "${VERSION}"
+
+            on_macos do
+              if Hardware::CPU.arm?
+                url "https://github.com/anonymous-dev-org/0x0/releases/download/v${VERSION}/0x0-server-darwin-arm64.zip"
+                sha256 "${SHA_DARWIN_ARM64}"
+              end
+              if Hardware::CPU.intel?
+                url "https://github.com/anonymous-dev-org/0x0/releases/download/v${VERSION}/0x0-server-darwin-x64.zip"
+                sha256 "${SHA_DARWIN_X64}"
+              end
+            end
+
+            on_linux do
+              if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
+                url "https://github.com/anonymous-dev-org/0x0/releases/download/v${VERSION}/0x0-server-linux-arm64.tar.gz"
+                sha256 "${SHA_LINUX_ARM64}"
+              end
+              if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
+                url "https://github.com/anonymous-dev-org/0x0/releases/download/v${VERSION}/0x0-server-linux-x64.tar.gz"
+                sha256 "${SHA_LINUX_X64}"
+              end
+            end
+
+            def install
+              bin.install "0x0-server"
+            end
+          end
+          RUBY
+
+      - name: Update zeroxzero formula (TUI)
+        env:
+          VERSION: ${{ github.event.client_payload.version }}
+          SHA_DARWIN_ARM64: ${{ github.event.client_payload.tui_darwin_arm64 }}
+          SHA_DARWIN_X64: ${{ github.event.client_payload.tui_darwin_x64 }}
+          SHA_LINUX_X64: ${{ github.event.client_payload.tui_linux_x64 }}
+          SHA_LINUX_ARM64: ${{ github.event.client_payload.tui_linux_arm64 }}
+        run: |
+          cat > Formula/zeroxzero.rb << RUBY
+          # typed: false
+          # frozen_string_literal: true
+
+          class Zeroxzero < Formula
+            desc "AI coding agent TUI — cross-provider terminal interface"
+            homepage "https://github.com/anonymous-dev-org/0x0"
+            version "${VERSION}"
+
+            depends_on "anonymous-dev-org/tap/zeroxzero-server"
+
+            on_macos do
+              if Hardware::CPU.arm?
+                url "https://github.com/anonymous-dev-org/0x0/releases/download/v${VERSION}/0x0-tui-darwin-arm64.zip"
+                sha256 "${SHA_DARWIN_ARM64}"
+              end
+              if Hardware::CPU.intel?
+                url "https://github.com/anonymous-dev-org/0x0/releases/download/v${VERSION}/0x0-tui-darwin-x64.zip"
+                sha256 "${SHA_DARWIN_X64}"
+              end
+            end
+
+            on_linux do
+              if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
+                url "https://github.com/anonymous-dev-org/0x0/releases/download/v${VERSION}/0x0-tui-linux-arm64.tar.gz"
+                sha256 "${SHA_LINUX_ARM64}"
+              end
+              if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
+                url "https://github.com/anonymous-dev-org/0x0/releases/download/v${VERSION}/0x0-tui-linux-x64.tar.gz"
+                sha256 "${SHA_LINUX_X64}"
+              end
+            end
+
+            def install
+              bin.install "0x0"
+            end
+          end
+          RUBY
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add Formula/
+          git diff --staged --quiet && echo "No changes" && exit 0
+          git commit -m "Update formulae to v${{ github.event.client_payload.version }}"
+          git push
