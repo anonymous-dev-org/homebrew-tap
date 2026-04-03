@@ -9,22 +9,22 @@ class ZeroxzeroServer < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/anonymous-dev-org/0x0/releases/download/v7.0.0/0x0-server-darwin-arm64.zip"
-      sha256 "f6111723ab015eadf592c7a8b203555596fbb60a751b5ae648851590c7b90dda"
+      sha256 "f1f5bb579cbcb33cf622d099637a24ec7d3b6d8f6e87fb4fd4f4cdfadc3429b4"
     end
     if Hardware::CPU.intel?
       url "https://github.com/anonymous-dev-org/0x0/releases/download/v7.0.0/0x0-server-darwin-x64.zip"
-      sha256 "293a8b328a45d13e41b13e78a82140c630284b623c55cbbbf322383feb747231"
+      sha256 "ddbbc02263b045993f8cbe7457b22534f2a22bc6e452588db2e6b6c92f244211"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
       url "https://github.com/anonymous-dev-org/0x0/releases/download/v7.0.0/0x0-server-linux-arm64.tar.gz"
-      sha256 "3c65763897e176293a41d52ce47f3e665f5b5e1f8a2830dc2075ef2059a09098"
+      sha256 "7ab6271ee490c257902975bb75bd2d51c70965b70ae1da712b8ba9bcb8fd9c5a"
     end
     if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
       url "https://github.com/anonymous-dev-org/0x0/releases/download/v7.0.0/0x0-server-linux-x64.tar.gz"
-      sha256 "ec19d58c8d3e5e1ce08a2658d4899fb21bf6529ab7445ab5e9e8cbabdb1f1623"
+      sha256 "b7d537c3a21ea85ea7782c40a9bb1f0b5869deadae72b847d4837e364a1413b2"
     end
   end
 
