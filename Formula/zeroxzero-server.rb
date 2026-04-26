@@ -4,24 +4,23 @@
 class ZeroxzeroServer < Formula
   desc "0x0 execution server for AI coding agents"
   homepage "https://github.com/anonymous-dev-org/0x0"
-  version "7.0.1"
+  version "0.1.0"
 
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/anonymous-dev-org/0x0/releases/download/v7.0.1/0x0-server-darwin-arm64.zip"
-    sha256 "8afbcd94b9bfc6b60e4bf69e87e899b4cbe4d0cacd1d081a32867505500063cb"
+    url "https://github.com/anonymous-dev-org/0x0/releases/download/v0.1.0/0x0-darwin-arm64.zip"
+    sha256 "8346a69ce3497ddc578c2c46262fd758a00f8540dc42121f99522648d234af58"
   elsif OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/anonymous-dev-org/0x0/releases/download/v7.0.1/0x0-server-darwin-x64.zip"
-    sha256 "1ecf2b04c44f35b3ca4bf45acf347d6098ed14477e797182c3e90d104737e500"
+    url "https://github.com/anonymous-dev-org/0x0/releases/download/v0.1.0/0x0-darwin-x64.zip"
+    sha256 "5c67f4601149063027fbb7b1f33766dfde74461f95fbb495f71f3b8eb3973ef5"
   elsif OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/anonymous-dev-org/0x0/releases/download/v7.0.1/0x0-server-linux-arm64.tar.gz"
-    sha256 "6472851d8bf19cf5d913432b843ce4f29b612b2be5cb34fed59900ab41ae08a3"
+    url "https://github.com/anonymous-dev-org/0x0/releases/download/v0.1.0/0x0-linux-arm64.tar.gz"
+    sha256 "403df4dfe2cf1dca2ceca80cb10aace2580435e5fe7d5e090b4b200a3756f8ff"
   elsif OS.linux? && Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-    url "https://github.com/anonymous-dev-org/0x0/releases/download/v7.0.1/0x0-server-linux-x64.tar.gz"
-    sha256 "92a282bb25ffc292d0060f7b91801127c0a6a7d549ede9d61c7c2ba21eb69433"
+    url "https://github.com/anonymous-dev-org/0x0/releases/download/v0.1.0/0x0-linux-x64.tar.gz"
+    sha256 "31788d06ecc40fac99222dea041c1f81674f5770a3b7be26bcbc65d94adca73e"
   end
 
   def install
-    bin.install "0x0-server"
-    bin.install_symlink bin/"0x0-server" => "0x0"
+    bin.install "0x0"
   end
 end
