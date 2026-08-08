@@ -4,8 +4,8 @@
 class Dbtui < Formula
   desc "Terminal database management interface with AI-assisted query building"
   homepage "https://github.com/anonymous-dev-org/dbtui"
-  url "https://github.com/anonymous-dev-org/dbtui/archive/refs/tags/v0.4.3.tar.gz"
-  sha256 "0e097ea8b6b69d4673efcc84d852c21ea15892bd2a1655fb8b1a305351e01b0b"
+  url "https://github.com/anonymous-dev-org/dbtui/archive/refs/tags/v0.4.4.tar.gz"
+  sha256 "6be1c342b3a28327be21bdba4a0caf6f12f080e5a94af8358b6875b0da146821"
   license "MIT"
 
   depends_on "rust" => :build
