@@ -1,5 +1,10 @@
 # Anonymous-dev-org Tap
 
+## Formulae
+
+- `dbtui` — terminal database management interface
+- `zeroxzero-server` — 0x0 execution server
+
 ## How do I install these formulae?
 
 `brew install anonymous-dev-org/tap/<formula>`
